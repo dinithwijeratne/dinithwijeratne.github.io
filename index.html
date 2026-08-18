@@ -6,110 +6,114 @@
     <title>Dinith Wijeratne | Engineering Portfolio</title>
     <style>
         body {
-            font-family: system-ui, -apple-system, sans-serif;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 18px;
+            margin: 30px 50px;
+            background-color: #ffffff;
+            color: #000000;
             line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-            color: #333;
         }
-        h1, h2, h3 {
-            color: #111;
-        }
-        header {
-            border-bottom: 2px solid #eee;
-            padding-bottom: 1rem;
-            margin-bottom: 2rem;
-        }
-        section {
-            margin-bottom: 2.5rem;
-        }
-        .project {
-            margin-bottom: 1.5rem;
-        }
-        .project h3 {
-            margin-bottom: 0.2rem;
-        }
-        .tech-stack {
-            font-size: 0.9rem;
-            color: #666;
-            font-style: italic;
+        h2 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.4em;
+            margin-top: 30px;
+            margin-bottom: 10px;
         }
         a {
-            color: #0066cc;
-            text-decoration: none;
-        }
-        a:hover {
+            color: #0000ee;
             text-decoration: underline;
         }
+        a:visited {
+            color: #551a8b;
+        }
         ul {
-            padding-left: 1.5rem;
+            margin-top: 5px;
+        }
+        li {
+            margin-bottom: 15px;
+        }
+        
+        /* New Layout Setup */
+        .page-layout {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start; /* Keeps the image at the top */
+            gap: 50px; /* Space between text and image */
+        }
+        
+        .main-content {
+            flex: 1; /* Allows text to take up the remaining space */
+            max-width: 800px; /* Prevents text lines from getting too long */
+        }
+        
+        .right-column {
+            flex-shrink: 0; /* Prevents the image space from being squished */
+        }
+        
+        .right-column img {
+            width: 500px; /* Adjust this to make the dedicated right space larger/smaller */
+            border: 1px solid #000;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Dinith Wijeratne</h1>
-        <p>
-            <a href="mailto:dinithwijeratne@gmail.com">Email</a> | 
-            <a href="https://github.com/N0VA-DKW">GitHub</a> | 
-        </p>
-    </header>
-
-    <section id="about">
-        <h2>About</h2>
-        <p>
-            I am a curious engineering student passionate about robotics, autnomous systems, and mechatronics. 
-        </p>
-    </section>
-
-    <section id="experience">
-        <h2>Experience</h2>
-        <div class="project">
-            <h3>Research Intern</h3>
-            <p><em>University of Memphis</em></p>
-            <ul>
-                <li>Designed and implemented machine learning algorithms and simulation scripts for fluid models.</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="projects">
-        <h2>Selected Projects</h2>
+    <!-- The page layout splits the screen into two columns -->
+    <div class="page-layout">
         
-        <div class="project">
-            <h3>GardenerX</h3>
-            <p class="tech-stack">Hardware / C++ / ESP32 / Cloud Processing</p>
-            <p>An autonomous electric lawnmower designed to reduce financial barriers in lawn care and promote environmental sustainability. This service is built to be accessible for everyone.</p>
-            <ul>
-                <li>Engineered a cloud-based path geometry system that preprocesses navigation paths, allowing the onboard ESP32 microcontroller to follow them without requiring heavy local processing.</li>
-                <li>Designed a custom chassis using HDPE plastics and carbon steel, featuring a modified drivetrain with cooling fans mounted on hinges for easy internal access and maintenance.</li>
-            </ul>
+        <!-- Left Column: All your text -->
+        <div class="main-content">
+            <header>
+                <h1 style="font-family: Arial, sans-serif; margin-bottom: 5px;">Dinith Wijeratne</h1>
+                <p>
+                    <a href="mailto:dinithwijeratne@gmail.com">Email</a> | 
+                    <a href="https://github.com/N0VA-DKW">GitHub</a>
+                </p>
+            </header>
+
+            <section id="about">
+                <h2>About</h2>
+                <p>
+                    I am a curious engineering student passionate about robotics, autonomous systems, and mechatronics. 
+                </p>
+                <h2>Resume</h2>
+                <p>
+                    <a href="Resume2026.pdf" target="_blank" rel="noopener noreferrer">View Resume (PDF)</a>
+                </p>
+            </section>
+
+            <section id="projects">
+                <h2>Selected Projects and Research</h2>
+                <ul>
+                    <li>
+                        <b>GardenerX</b><br>
+                        An autonomous electric lawnmower designed to reduce financial barriers in lawn care and promote environmental sustainability.<br>
+                        <a href="Technical Documentation .pdf" target="_blank">Overview</a> | 
+                        <a href="Making Lawn Care Accessible and Clean_ Autonomous Lawnmower with PPP-RTK GPS System.pdf" target="_blank">Paper</a>
+                    </li>
+                    
+                    <li>
+                        <b>Fluid Model Simulations — Research Intern (University of Memphis)</b><br>
+                        Designed and implemented machine learning algorithms and simulation scripts for fluid models under the guidance of Dr. Foti. Authored a tutorial to reproduce my work in removing backgrounds against blending in flows with limited amount of training: <a href="Method for Removing Background in LCC Videos.pdf" target="_blank">Paper</a>
+                    </li>
+                    
+                    <li>
+                        <b>Smart Audio Player</b><br>
+                        Created a smart audio player for my temple to replace a broken chanting audio player.
+                    </li>
+                </ul>
+            </section>
         </div>
 
-        <div class="project">
-            <h3>Robotics & Kinematics Simulators</h3>
-            <p class="tech-stack">Python / C++ / NumPy / Matplotlib</p>
-            <p>Developed software applications for robotic modeling and automation.</p>
-            <ul>
-                <li>Built a 3D robotic arm inverse kinematics simulator.</li>
-                <li>Wrote extensive data parsing scripts to analyze complex mechanical systems.</li>
-            </ul>
+        <!-- Right Column: Just your photo -->
+        <div class="right-column">
+            <img src="profile.JPEG" alt="Dinith Wijeratne">
         </div>
-    </section>
 
-    <section id="skills">
-        <h2>Technical Skills</h2>
-        <ul>
-            <li><strong>Programming:</strong> Python, C++</li>
-            <li><strong>Libraries & Tools:</strong> NumPy, Matplotlib, ESP32 Microcontrollers</li>
-            <li><strong>Engineering:</strong> Mechatronics, 3D Printing (Nylon PA12), Kinematics</li>
-            <li><strong>Mathematics:</strong> Linear Algebra, Multivariable Calculus, Differential Equations</li>
-        </ul>
-    </section>
+    </div>
 
     <footer>
+        <hr size="1" noshade>
         <p><small>&copy; 2026 Dinith Kavish Wijeratne. All rights reserved.</small></p>
     </footer>
 

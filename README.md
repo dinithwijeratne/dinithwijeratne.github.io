@@ -1,2 +1,2 @@
-# N0VA-DKW.github.io
+# dinithwijeratne.github.io
 Personal Website

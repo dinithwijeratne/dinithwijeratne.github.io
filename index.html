@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dinith Wijeratne | Engineering Portfolio</title>
+
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: "Times New Roman", Times, serif;
             font-size: 18px;
@@ -13,93 +18,204 @@
             color: #000000;
             line-height: 1.6;
         }
+
+        h1, h2, h3, p, ul {
+            margin-top: 0;
+        }
+
         h2 {
             font-family: Arial, Helvetica, sans-serif;
             font-size: 1.4em;
             margin-top: 30px;
             margin-bottom: 10px;
         }
+
         a {
             color: #0000ee;
             text-decoration: underline;
+            word-break: break-word;
         }
+
         a:visited {
             color: #551a8b;
         }
+
         ul {
             margin-top: 5px;
+            padding-left: 22px;
         }
+
         li {
             margin-bottom: 15px;
         }
-        
-        /* New Layout Setup */
+
         .page-layout {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start; 
-            gap: 50px; 
+            align-items: flex-start;
+            gap: 50px;
         }
-        
+
         .main-content {
-            flex: 1; 
-            max-width: 800px; 
+            flex: 1;
+            min-width: 0;
+            max-width: 800px;
         }
-        
+
         .right-column {
-            flex-shrink: 0; 
+            flex-shrink: 0;
+            width: 500px;
+            max-width: 100%;
         }
-        
+
         .right-column img {
-            width: 500px; 
+            width: 100%;
+            height: auto;
+            display: block;
             border: 1px solid #000;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            aspect-ratio: 16 / 9;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        footer {
+            margin-top: 30px;
+        }
+
+        /* Tablet and smaller */
+        @media (max-width: 1000px) {
+            body {
+                margin: 24px 20px;
+                font-size: 17px;
+            }
+
+            .page-layout {
+                flex-direction: column;
+                gap: 25px;
+            }
+
+            .main-content {
+                max-width: 100%;
+            }
+
+            .right-column {
+                width: 100%;
+                max-width: 600px;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            body {
+                margin: 16px 14px;
+                font-size: 16px;
+                line-height: 1.55;
+            }
+
+            h1 {
+                font-size: 1.6em;
+            }
+
+            h2 {
+                font-size: 1.2em;
+                margin-top: 22px;
+            }
+
+            .page-layout {
+                gap: 20px;
+            }
+
+            ul {
+                padding-left: 20px;
+            }
+
+            li {
+                margin-bottom: 18px;
+            }
+
+            .video-container {
+                margin-top: 14px;
+            }
         }
     </style>
 </head>
-<body>
 
+<body>
     <div class="page-layout">
-        
         <div class="main-content">
             <header>
                 <h1 style="font-family: Arial, sans-serif; margin-bottom: 5px;">Dinith Wijeratne</h1>
                 <h2 style="font-family: Arial, sans-serif; font-size: 16px; font-weight: normal; margin-top: 0; color: #555;">Freshman at UAH Aerospace Engineering</h2>
                 <p>
-                    <a href="mailto:dinithwijeratne@gmail.com">Email</a> | 
-                    <a href="https://github.com/dinithwijeratne">GitHub</a>
+                    <a href="mailto:dinithwijeratne@gmail.com">Email</a> |
+                    <a href="https://github.com/dinithwijeratne" target="_blank" rel="noopener noreferrer">GitHub</a>
                 </p>
             </header>
 
             <section id="about">
                 <h2>About</h2>
                 <p>
-                    I am a passionate engineering student curious about robotics, autonomous systems, and mechatronics. 
+                    I am a passionate engineering student curious about robotics, autonomous systems, and mechatronics.
                 </p>
+
                 <h2>Resume</h2>
                 <p>
-                    <a href="Resume2026.pdf" target="_blank" rel="noopener noreferrer">View Resume (PDF)</a>
+                    <a href="CV2026.pdf" target="_blank" rel="noopener noreferrer">View CV (PDF)</a>
                 </p>
             </section>
 
             <section id="projects">
                 <h2>Selected Projects and Research</h2>
+
                 <ul>
                     <li>
                         <b>GardenerX</b><br>
-                        An autonomous electric lawnmower designed to reduce financial barriers in lawn care and promote environmental sustainability.<br>
-                        <a href="Technical Documentation .pdf" target="_blank">Overview</a> | 
-                        <a href="Making Lawn Care Accessible and Clean_ Autonomous Lawnmower with PPP-RTK GPS System.pdf" target="_blank">Paper</a>
+                        An autonomous electric lawnmower designed to reduce financial barriers in lawn care and promote environmental sustainability.<br><br>
+
+                        <a href="Technical Documentation .pdf" target="_blank" rel="noopener noreferrer">Overview</a> |
+                        <a href="Making Lawn Care Accessible and Clean_ Autonomous Lawnmower with PPP-RTK GPS System.pdf" target="_blank" rel="noopener noreferrer">Paper</a>
+
+                        <div class="video-container">
+                            <iframe
+                                src="https://www.youtube.com/embed/coPaVwb8DIE"
+                                title="GardenerX Video"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
                     </li>
-                    
+
                     <li>
                         <b>Fluid Model Simulations - Research Intern (University of Memphis)</b><br>
-                        Designed and implemented machine learning algorithms and simulation scripts for fluid models under the guidance of Dr. Foti. Authored a tutorial to reproduce my work in removing backgrounds against blending in flows with limited amount of training.<br> 
-                        <a href="Method for Removing Background in LCC Videos.pdf" target="_blank">Paper</a>
+                        Designed and implemented machine learning algorithms and simulation scripts for fluid models under the guidance of Dr. Foti. Authored a tutorial to reproduce my work in removing backgrounds against blending in flows with limited amount of training.<br>
+                        <a href="Method for Removing Background in LCC Videos.pdf" target="_blank" rel="noopener noreferrer">Paper</a>
                     </li>
-                    
+
                     <li>
                         <b>Smart Audio Player</b><br>
-                        Created a smart audio player for my temple to replace a broken chanting audio player.
+                        Created a smart audio player for my temple to replace a broken chanting audio player on a tight budget of $50.
+
+                        <div class="video-container">
+                            <iframe
+                                src="https://www.youtube.com/embed/altmU1gADjI?si=bDJKciGbqcfeYdtl"
+                                title="Smart Music Player Build Process Clip"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
                     </li>
                 </ul>
             </section>
@@ -109,13 +225,11 @@
         <div class="right-column">
             <img src="profile.JPEG" alt="Dinith Wijeratne">
         </div>
-
     </div>
 
     <footer>
         <hr size="1" noshade>
         <p><small>&copy; 2026 Dinith Kavish Wijeratne. All rights reserved.</small></p>
     </footer>
-
 </body>
 </html>
